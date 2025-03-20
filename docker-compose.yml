@@ -1,0 +1,23 @@
+services:
+  mysql_one:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_USER=
+      - MYSQL_PASSWORD=
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+  cloudbeaver:
+     image: dbeaver/cloudbeaver
+     environment:
+       - CLOUDBEAVER_DB_USER=
+       - CLOUDBEAVER_DB_PASSWORD=
+     ports:
+       - "8978:8978"
+volumes:
+  mysql_data:
+
+    
